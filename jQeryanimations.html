@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <article>
+        This is an article.
+        <div>
+            <p>This is a paragraph inside of a div inside of an article.</p>
+        </div>
+        <input id="edit_user" type="text" value="My user name">
+        <ul class="items">
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </ul>
+    </article>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".items").on("click",function(){
+             $("li").animate({   //What properties to manipulate
+                opacity:0.5,
+                marginleft:"+100"
+             },5000,function(){
+                $("p").css("font-size","+5"); //this code is execute when the animate is completed.
+             })
+            })
+        })
+
+        //fade / slide / hide / show
+        $(document).ready(function(){
+        $("article").hide();
+        $("article").fadeIn(2000);
+        var toggleShow=true;
+        $("article").on("click",function(){
+            if(toggleShow){
+                $("#edit_user").show();
+                
+            }
+            else{
+                $("#edit_user").hide();
+            }
+            $(".items").slideToggle(500)
+            toggleShow=!toggleShow;
+        })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <head>
+            <title>jquery fadeIn method</title>
+        </head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $(".btn").on("click",function(){
+                    $("p").fadeOut()
+                });
+                $(".btn1").on("click",function(){
+                    $("p").fadeIn()
+                })
+            })
+
+        </script>
+        <p>This is a paragraph</p>
+        <button class="btn">Find out</button>
+        <button class="btn1">Find In </button>
+    </body>
+</html>

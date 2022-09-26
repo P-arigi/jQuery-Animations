@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <head>
+            <title>Selectors Caching in jquery</title>
+        </head>
+    
+    <div id="container"></div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script>
+        $(function(){
+            var $element=$("#container");
+            $element.text("Hello World!");
+            $element.css("color","pink");
+            $element.on("click",function(e){
+              console.log("moused over!");
+            });
+            var $newDiv=$("<div>",{
+                text:"I am a div!",
+                css:{
+                    color:"blue"
+                }
+            });
+            $element.append($newDiv)
+        })
+    </script>
+        
+    </body>
+    </html>
